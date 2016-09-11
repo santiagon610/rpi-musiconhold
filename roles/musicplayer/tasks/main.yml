@@ -1,0 +1,25 @@
+- name: Create music directory
+  file:
+    path: ~/music/
+    state: directory
+
+- name: Create scripts directory
+  file:
+    path: ~/scripts/
+    state: directory
+
+- name: Copy musicStart script
+  copy:
+    src: musicStart.sh
+    dest: ~/scripts/musicStart.sh
+    owner: pi
+    group: pi
+    mode: 0755
+
+- name: Copy musicStop script
+  copy:
+    src: musicStop.sh
+    dest: ~/scripts/musicStop.sh
+    owner: pi
+    group: pi
+    mode: 0755

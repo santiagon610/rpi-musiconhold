@@ -1,0 +1,9 @@
+- name: Create custom bash prompt
+  copy:
+    src: bashprompt.sh
+    dest: /etc/profile.d/bashprompt.sh
+    owner: root
+    group: root
+    mode: 0755
+  become: yes
+  become_user: root
