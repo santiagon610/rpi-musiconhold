@@ -5,3 +5,5 @@ mpc clear
 mpc update
 mpc listall | mpc add
 mpc play
+echo "Complete"
+echo ""

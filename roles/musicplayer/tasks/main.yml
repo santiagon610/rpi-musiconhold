@@ -23,3 +23,10 @@
     owner: pi
     group: pi
     mode: 0755
+
+- name: Add music start to rc.local
+  lineinfile:
+    dest: /etc/rc.local
+    line: "mpc play"
+  become: yes
+  become_user: root
