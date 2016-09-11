@@ -1,0 +1,12 @@
+- hosts: moh
+
+  # vars_files:
+  #   - moodle.yml
+  #   - credentials.yml
+  #   - constants-us-west-2.yml
+
+  roles:
+    - apt_packages
+    - bash_prompt
+    - musicplayer
+    - sample_moh

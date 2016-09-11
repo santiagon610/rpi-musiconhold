@@ -1,0 +1,13 @@
+- name: Download sample MP3 file
+  get_url:
+    url: http://mustard.nickshotdogstand.com/~santiagon/wcpm/omnipcx-hold.mp3
+    dest: ~/music/default.mp3
+    owner: pi
+    group: pi
+    mode: 0755
+
+- name: Stop music
+  shell: ~/scripts/musicStop.sh
+
+- name: Start music
+  shell: ~/scripts/musicStart.sh

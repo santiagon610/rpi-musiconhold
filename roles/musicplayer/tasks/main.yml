@@ -8,6 +8,11 @@
     path: ~/scripts/
     state: directory
 
+- name: Create logging and runtime directory
+  file:
+    path: ~/services/
+    state: directory
+
 - name: Copy musicStart script
   copy:
     src: musicStart.sh
@@ -23,6 +28,16 @@
     owner: pi
     group: pi
     mode: 0755
+
+- name: Copy MPD configuration
+  copy:
+    src: mpd.conf
+    dest: /etc/mpd.conf
+    owner: root
+    group: root
+    mode: 0755
+  become: yes
+  become_user: root
 
 - name: Add music start to rc.local
   lineinfile:
